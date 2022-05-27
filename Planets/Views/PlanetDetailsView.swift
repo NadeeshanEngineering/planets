@@ -9,15 +9,14 @@ import Foundation
 import SwiftUI
 
 struct PlanetDetailsView: View {
-    let index: Int
-    let planet: Planet
+    @StateObject var planetDetailsViewModel = PlanetDetailsViewModel(id: 1, planet: nil)
     
     var body: some View {
         VStack(alignment: .center, spacing: 20) {
-            KingFisherImageView(url: Constants.IMAGE_URL_BASE + "\(index)" + Constants.IMAGE_SIZE)
-            detailTextView(title: "Name", value: planet.name)
-            detailTextView(title: "Orbital Period", value: planet.orbital_period)
-            detailTextView(title: "Gravity", value: planet.gravity)
+            KingFisherImageView(url: planetDetailsViewModel.image_url)
+            detailTextView(title: "Name", value: planetDetailsViewModel.planet?.name ?? "N/A")
+            detailTextView(title: "Orbital Period", value: planetDetailsViewModel.planet?.orbital_period ?? "N/A")
+            detailTextView(title: "Gravity", value: planetDetailsViewModel.planet?.gravity ?? "N/A")
             Spacer()
         }
     }
