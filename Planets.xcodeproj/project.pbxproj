@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		302A0E232840584C00D89FDB /* KingfisherImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302A0E222840584C00D89FDB /* KingfisherImageView.swift */; };
 		307114AD2840035E00E14D10 /* PlanetsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307114AC2840035E00E14D10 /* PlanetsApp.swift */; };
 		307114AF2840035E00E14D10 /* PlanetListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307114AE2840035E00E14D10 /* PlanetListView.swift */; };
 		307114B12840036200E14D10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 307114B02840036200E14D10 /* Assets.xcassets */; };
@@ -20,15 +21,18 @@
 		307114CE2840350900E14D10 /* PlanetsMockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307114CD2840350900E14D10 /* PlanetsMockRepository.swift */; };
 		307114D028403EC000E14D10 /*  Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307114CF28403EC000E14D10 /*  Constants.swift */; };
 		307114D228404F6F00E14D10 /* PlanetDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307114D128404F6F00E14D10 /* PlanetDetailsView.swift */; };
+		5FA23916F25A6F28A937FE2D /* libPods-Planets.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C6396AA902AB42AB8EE981C /* libPods-Planets.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		302A0E222840584C00D89FDB /* KingfisherImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherImageView.swift; sourceTree = "<group>"; };
+		304FCB18CD7BC23CB6F3D122 /* Pods-Planets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planets.debug.xcconfig"; path = "Target Support Files/Pods-Planets/Pods-Planets.debug.xcconfig"; sourceTree = "<group>"; };
 		307114A92840035E00E14D10 /* Planets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		307114AC2840035E00E14D10 /* PlanetsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsApp.swift; sourceTree = "<group>"; };
 		307114AE2840035E00E14D10 /* PlanetListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListView.swift; sourceTree = "<group>"; };
 		307114B02840036200E14D10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		307114B32840036200E14D10 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		307114BC28400D9200E14D10 /* PlanetListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListViewModel.swift; sourceTree = SOURCE_ROOT; };
+		307114BC28400D9200E14D10 /* PlanetListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlanetListViewModel.swift; path = Planets/ViewModels/PlanetListViewModel.swift; sourceTree = SOURCE_ROOT; };
 		307114BF2840106D00E14D10 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		307114C1284012F100E14D10 /* Planets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planets.swift; sourceTree = "<group>"; };
 		307114C4284023F700E14D10 /* PlanetsApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsApiService.swift; sourceTree = "<group>"; };
@@ -37,6 +41,8 @@
 		307114CD2840350900E14D10 /* PlanetsMockRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsMockRepository.swift; sourceTree = "<group>"; };
 		307114CF28403EC000E14D10 /*  Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " Constants.swift"; sourceTree = "<group>"; };
 		307114D128404F6F00E14D10 /* PlanetDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetDetailsView.swift; sourceTree = "<group>"; };
+		3C6396AA902AB42AB8EE981C /* libPods-Planets.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Planets.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDC04598905A938E0E2107A4 /* Pods-Planets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planets.release.xcconfig"; path = "Target Support Files/Pods-Planets/Pods-Planets.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FA23916F25A6F28A937FE2D /* libPods-Planets.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +62,8 @@
 			children = (
 				307114AB2840035E00E14D10 /* Planets */,
 				307114AA2840035E00E14D10 /* Products */,
+				E5723D615D5D2C38C55B962B /* Pods */,
+				612BB0A5051CA0FC55ECAB75 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +103,7 @@
 			children = (
 				307114AE2840035E00E14D10 /* PlanetListView.swift */,
 				307114D128404F6F00E14D10 /* PlanetDetailsView.swift */,
+				302A0E222840584C00D89FDB /* KingfisherImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -142,6 +152,23 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		612BB0A5051CA0FC55ECAB75 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C6396AA902AB42AB8EE981C /* libPods-Planets.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E5723D615D5D2C38C55B962B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				304FCB18CD7BC23CB6F3D122 /* Pods-Planets.debug.xcconfig */,
+				EDC04598905A938E0E2107A4 /* Pods-Planets.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -149,6 +176,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 307114B72840036200E14D10 /* Build configuration list for PBXNativeTarget "Planets" */;
 			buildPhases = (
+				05E250A5D7CF7514C7453EF2 /* [CP] Check Pods Manifest.lock */,
 				307114A52840035E00E14D10 /* Sources */,
 				307114A62840035E00E14D10 /* Frameworks */,
 				307114A72840035E00E14D10 /* Resources */,
@@ -207,11 +235,37 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		05E250A5D7CF7514C7453EF2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Planets-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		307114A52840035E00E14D10 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				302A0E232840584C00D89FDB /* KingfisherImageView.swift in Sources */,
 				307114CE2840350900E14D10 /* PlanetsMockRepository.swift in Sources */,
 				307114D228404F6F00E14D10 /* PlanetDetailsView.swift in Sources */,
 				307114C5284023F800E14D10 /* PlanetsApiService.swift in Sources */,
@@ -347,6 +401,7 @@
 		};
 		307114B82840036200E14D10 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 304FCB18CD7BC23CB6F3D122 /* Pods-Planets.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -375,6 +430,7 @@
 		};
 		307114B92840036200E14D10 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDC04598905A938E0E2107A4 /* Pods-Planets.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

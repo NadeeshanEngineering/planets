@@ -17,8 +17,8 @@ struct PlanetListView: View {
             List {
                 ForEach(0..<planetListViewModel.planets.count, id: \.self) { index in
                     let planet = planetListViewModel.planets[index]
-                    NavigationLink(destination: PlanetDetailsView(planet: planet)) {
-                        Text(planet.name)
+                    NavigationLink(destination: PlanetDetailsView(index: index, planet: planet)) {
+                        Text("\(planet.name) (\(planet.climate))")
                             .padding()
                             .onAppear {
                                 if index == planetListViewModel.planets.count - 2 {

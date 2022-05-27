@@ -11,4 +11,6 @@ struct Constants {
     static private let BASE = "https://swapi.dev/api/"
     static private let ROOT = "planets/"
     static let BASE_URL = Constants.BASE + Constants.ROOT
+    static let IMAGE_URL_BASE = "https://picsum.photos/id/"
+    static let IMAGE_SIZE = "/200/300"
 }

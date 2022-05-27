@@ -9,10 +9,10 @@ import Foundation
 import SwiftUI
 
 struct PlanetDetailsView: View {
-    
+    let index: Int
     let planet: Planet
     
     var body: some View {
-        Text("This is the detail view of \(planet.name)")
+        KingFisherImageView(url: Constants.IMAGE_URL_BASE + "\(index)" + Constants.IMAGE_SIZE)
     }
 }
