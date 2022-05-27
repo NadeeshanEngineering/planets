@@ -19,6 +19,7 @@
 		307114CC284032BA00E14D10 /* PlanetsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307114CB284032BA00E14D10 /* PlanetsRepository.swift */; };
 		307114CE2840350900E14D10 /* PlanetsMockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307114CD2840350900E14D10 /* PlanetsMockRepository.swift */; };
 		307114D028403EC000E14D10 /*  Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307114CF28403EC000E14D10 /*  Constants.swift */; };
+		307114D228404F6F00E14D10 /* PlanetDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307114D128404F6F00E14D10 /* PlanetDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		307114CB284032BA00E14D10 /* PlanetsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsRepository.swift; sourceTree = "<group>"; };
 		307114CD2840350900E14D10 /* PlanetsMockRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsMockRepository.swift; sourceTree = "<group>"; };
 		307114CF28403EC000E14D10 /*  Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " Constants.swift"; sourceTree = "<group>"; };
+		307114D128404F6F00E14D10 /* PlanetDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				307114AE2840035E00E14D10 /* PlanetListView.swift */,
+				307114D128404F6F00E14D10 /* PlanetDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				307114CE2840350900E14D10 /* PlanetsMockRepository.swift in Sources */,
+				307114D228404F6F00E14D10 /* PlanetDetailsView.swift in Sources */,
 				307114C5284023F800E14D10 /* PlanetsApiService.swift in Sources */,
 				307114D028403EC000E14D10 /*  Constants.swift in Sources */,
 				307114CC284032BA00E14D10 /* PlanetsRepository.swift in Sources */,

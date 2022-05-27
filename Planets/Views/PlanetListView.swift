@@ -17,14 +17,16 @@ struct PlanetListView: View {
             List {
                 ForEach(0..<planetListViewModel.planets.count, id: \.self) { index in
                     let planet = planetListViewModel.planets[index]
-                    Text(planet.name)
-                        .padding()
-                        .onAppear {
-                            if index == planetListViewModel.planets.count - 2 {
-                                paginationIndex += 1
-                                planetListViewModel.fetchPlanets(till: paginationIndex)
+                    NavigationLink(destination: PlanetDetailsView(planet: planet)) {
+                        Text(planet.name)
+                            .padding()
+                            .onAppear {
+                                if index == planetListViewModel.planets.count - 2 {
+                                    paginationIndex += 1
+                                    planetListViewModel.fetchPlanets(till: paginationIndex)
+                                }
                             }
-                        }
+                    }
                 }
             }
             .navigationTitle("Planets")
