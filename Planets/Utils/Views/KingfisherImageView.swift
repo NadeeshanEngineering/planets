@@ -8,6 +8,7 @@
 import SwiftUI
 import struct Kingfisher.KFImage
 
+// MARK: Custom image view
 @ViewBuilder
 func KingFisherImageView(url: String) -> KFImage {
     KFImage(

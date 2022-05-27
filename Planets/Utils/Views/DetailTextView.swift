@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// MARK: Custom text views
 @ViewBuilder
 func detailTextView(title: String, value: String) -> HStack<TupleView<(Text, Text)>> {
     HStack {

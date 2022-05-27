@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: App Constants Strings
 struct Constants {
     static private let BASE = "https://swapi.dev/api/"
     static private let ROOT = "planets/"
