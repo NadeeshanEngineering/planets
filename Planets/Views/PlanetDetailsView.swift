@@ -13,6 +13,12 @@ struct PlanetDetailsView: View {
     let planet: Planet
     
     var body: some View {
-        KingFisherImageView(url: Constants.IMAGE_URL_BASE + "\(index)" + Constants.IMAGE_SIZE)
+        VStack(alignment: .center, spacing: 20) {
+            KingFisherImageView(url: Constants.IMAGE_URL_BASE + "\(index)" + Constants.IMAGE_SIZE)
+            detailTextView(title: "Name", value: planet.name)
+            detailTextView(title: "Orbital Period", value: planet.orbital_period)
+            detailTextView(title: "Gravity", value: planet.gravity)
+            Spacer()
+        }
     }
 }
