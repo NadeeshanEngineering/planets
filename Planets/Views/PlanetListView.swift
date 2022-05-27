@@ -10,16 +10,27 @@ import Combine
 
 struct PlanetListView: View {
     @StateObject var planetListViewModel = PlanetListViewModel()
+    @State var paginationIndex = 1
     
     var body: some View {
-        VStack {
-            List(planetListViewModel.planets, id: \.name) { planet in
-                Text(planet.name)
-                    .padding()
+        NavigationView {
+            List {
+                ForEach(0..<planetListViewModel.planets.count, id: \.self) { index in
+                    let planet = planetListViewModel.planets[index]
+                    Text(planet.name)
+                        .padding()
+                        .onAppear {
+                            if index == planetListViewModel.planets.count - 2 {
+                                paginationIndex += 1
+                                planetListViewModel.fetchPlanets(till: paginationIndex)
+                            }
+                        }
+                }
             }
+            .navigationTitle("Planets")
         }
         .onAppear {
-            planetListViewModel.onAppear()
+            planetListViewModel.fetchPlanets(till: paginationIndex)
         }
     }
 }

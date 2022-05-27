@@ -8,7 +8,7 @@
 import Foundation
 
 protocol PlanetsRepositoryProtocal {
-    func fetchPlanets(completion: @escaping (Result<[Planet], URLError>) -> Void)
+    func fetchPlanets(till paginationIndex: Int, completion: @escaping (Result<[Planet], URLError>) -> Void)
 }
 
 final class PlanetsRepository: PlanetsRepositoryProtocal {
@@ -25,9 +25,9 @@ final class PlanetsRepository: PlanetsRepositoryProtocal {
         self.mockService = mockService
     }
     
-    final func fetchPlanets(completion: @escaping (Result<[Planet], URLError>) -> Void) {
+    final func fetchPlanets(till paginationIndex: Int, completion: @escaping (Result<[Planet], URLError>) -> Void) {
         if let apiService = self.apiService {
-            apiService.fetchPlanets(completion: completion)
+            apiService.fetchPlanets(till: paginationIndex, completion: completion)
             return
         }
         

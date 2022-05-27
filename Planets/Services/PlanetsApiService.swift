@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol PlanetsApiServiceProtocal {
-    func fetchPlanets(completion: @escaping (Result<[Planet], URLError>) -> Void)
+    func fetchPlanets(till paginationIndex: Int, completion: @escaping (Result<[Planet], URLError>) -> Void)
 }
 
 final class PlanetsApiService: PlanetsApiServiceProtocal {
@@ -19,21 +19,23 @@ final class PlanetsApiService: PlanetsApiServiceProtocal {
         return cancellables
     }
     
-    final func fetchPlanets(completion: @escaping (Result<[Planet], URLError>) -> Void) {
-        guard let url = URL(string: Constants.BASE_URL + "?page=2") else {
+    final func fetchPlanets(till paginationIndex: Int, completion: @escaping (Result<[Planet], URLError>) -> Void) {
+        guard let url = URL(string: Constants.BASE_URL + "?page=\(paginationIndex)") else {
             completion(.failure(URLError(.cannotFindHost)))
             return
         }
         
-        cancellables.insert(URLSession.call(for: url, format: Planets.self, completion: { response in
-            switch response {
-            case .success(let planets):
-                completion(.success(planets.results))
-                break
-            case .failure(let error):
-                completion(.failure(error))
-                break
-            }
-        }))
+        DispatchQueue.global(qos: .background).async { [self] in
+            cancellables.insert(URLSession.call(for: url, format: Planets.self, completion: { response in
+                switch response {
+                case .success(let planets):
+                    completion(.success(planets.results))
+                    break
+                case .failure(let error):
+                    completion(.failure(error))
+                    break
+                }
+            }))
+        }
     }
 }

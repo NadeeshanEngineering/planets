@@ -17,15 +17,17 @@ final class PlanetListViewModel: ObservableObject {
         self.repository = repository
     }
     
-    func onAppear() {
-        self.repository.fetchPlanets { result in
-            switch result {
-            case .success(let planets):
-                self.planets = planets
-                break
-            case .failure(let error):
-                print("Error \(error)")
-                break
+    func fetchPlanets(till paginationIndex: Int) {
+        DispatchQueue.main.async {
+            self.repository.fetchPlanets(till: paginationIndex) { result in
+                switch result {
+                case .success(let planets):
+                    self.planets += planets
+                    break
+                case .failure(let error):
+                    print("Error \(error)")
+                    break
+                }
             }
         }
     }
