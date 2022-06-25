@@ -38,20 +38,41 @@ extension URLSession {
      })
      ```
     */
+
+// To remove
+//    static func call<T:Decodable>(for url: URL, format: T.Type, completion: @escaping (Result<T, URLError>) -> Void) -> AnyCancellable {
+//        return URLSession.shared.dataTaskPublisher(for: url)
+//            .tryMap { (data, response) in
+//                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+//                    throw URLError(.badServerResponse)
+//                }
+//                return data
+//            }
+//            .decode(type: T.self, decoder: JSONDecoder())
+//            .receive(on: DispatchQueue.main)
+//            .sink(receiveCompletion: { print ("Received completion: \($0).") }) { result in
+//                print ("Response: \(result)")
+//                completion(.success(result))
+//            }
+//    }
     
-    static func call<T:Decodable>(for url: URL, format: T.Type, completion: @escaping (Result<T, URLError>) -> Void) -> AnyCancellable {
+//    static func call<T:Decodable>(for url: URL, format: T.Type) -> AnyPublisher<T, Error> {
+//        return URLSession.shared.dataTaskPublisher(for: url)
+//            .tryMap { (data, response) in
+//                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+//                    throw URLError(.badServerResponse)
+//                }
+//                return data
+//            }
+//            .decode(type: T.self, decoder: JSONDecoder())
+//            .receive(on: DispatchQueue.main)
+//            .eraseToAnyPublisher()
+//    }
+    
+    static func call<T:Decodable>(for url: URL, format: T.Type) -> AnyPublisher<T, Error> {
         return URLSession.shared.dataTaskPublisher(for: url)
-            .tryMap { (data, response) in
-                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-                    throw URLError(.badServerResponse)
-                }
-                return data
-            }
+            .map({ $0.data })
             .decode(type: T.self, decoder: JSONDecoder())
-            .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { print ("Received completion: \($0).") }) { result in
-                print ("Response: \(result)")
-                completion(.success(result))
-            }
+            .eraseToAnyPublisher()
     }
 }

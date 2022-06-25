@@ -25,13 +25,13 @@ final class PlanetListViewModel: ObservableObject {
 
      # Example #
     ```
-     let object = PlanetListViewModel(repository: PlanetsRepository(service: PlanetsMockRepository()))
+     let object = PlanetListViewModel(repository: PlanetsMockRepository())
      
-     let object = PlanetListViewModel(repository: PlanetsRepository(service: PlanetsApiService()))
+     let object = PlanetListViewModel(repository: PlanetsApiService())
      ```
     */
     
-    init(repository: PlanetsRepositoryProtocal = PlanetsRepository(service: PlanetsApiService())) {
+    init(repository: PlanetsRepositoryProtocal = PlanetsApiService()) {
         self.repository = repository
     }
     
@@ -54,18 +54,17 @@ final class PlanetListViewModel: ObservableObject {
     */
     
     func fetchPlanets(till paginationIndex: Int) {
-        DispatchQueue.main.async {
-            // MARK: Fetch data from repository
-            self.repository.fetchPlanets(till: paginationIndex) { result in
-                switch result {
-                case .success(let planets):
-                    self.planets += planets
-                    break
-                case .failure(let error):
-                    print("Error \(error)")
-                    break
-                }
+        self.repository.fetchPlanets(till: paginationIndex).sink { result in
+            switch result {
+            case .failure(let error):
+                print(error.localizedDescription)
+            default:
+                print("completed")
             }
-        }
+        } receiveValue: { planets in
+            DispatchQueue.main.async {
+                self.planets += planets.results
+            }
+        }.store(in: &cancellables)
     }
 }

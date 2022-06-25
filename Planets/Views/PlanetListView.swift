@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 struct PlanetListView: View {
-    @StateObject var planetListViewModel = PlanetListViewModel()
+    @ObservedObject var planetListViewModel = PlanetListViewModel()
     @State var paginationIndex = 1
     
     var body: some View {

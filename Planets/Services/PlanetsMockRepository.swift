@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 final class PlanetsMockRepository: PlanetsRepositoryProtocal {
     
@@ -15,7 +16,7 @@ final class PlanetsMockRepository: PlanetsRepositoryProtocal {
      Here is the discussion. This is an abstract functinon to fecth the mock data. Hence this function must implement when the class extend **PlanetsRepositoryProtocal**.
      
      - parameter till: Current pagination index.
-     - returns: Result object with the response from the given repository.
+     - returns: AnyPublisher<Planets, Error> object with the response from the given repository.
 
      # Notes: #
      1. Parameters must be **Int** type
@@ -23,20 +24,22 @@ final class PlanetsMockRepository: PlanetsRepositoryProtocal {
 
      # Example #
     ```
-     PlanetListViewModel().fetchPlanets(till: 0) { result in
+     PlanetsMockRepository().fetchPlanets(till: 0).sink { result in
          switch result {
-         case .success(let response):
-             print(response)
-             break
          case .failure(let error):
-             print("Error \(error)")
-             break
+             print(error.localizedDescription)
+         default:
+             print("completed")
          }
-     }
+     } receiveValue: { planets in
+             print(planets)
+     }.store(in: &cancellables)
      ```
     */
     
-    func fetchPlanets(till paginationIndex: Int, completion: @escaping (Result<[Planet], URLError>) -> Void) {
-        completion(.success([Planet(name: "Polis Massa", orbital_period: "590", climate: "artificial temperate ", gravity: "0.56 standard")]))
+    final func fetchPlanets(till paginationIndex: Int) -> AnyPublisher<Planets, Error> {
+        return Just(Planets(count: 1, next: nil, previous: nil, results: [Planet(name: "Polis Massa", orbital_period: "590", climate: "artificial temperate ", gravity: "0.56 standard")]))
+            .setFailureType(to: Error.self)
+            .eraseToAnyPublisher()
     }
 }
