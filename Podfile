@@ -1,6 +1,12 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '12.0'
 
 target 'Planets' do
-   pod 'Kingfisher/SwiftUI'
+
+  use_frameworks!
+  pod 'Kingfisher/SwiftUI'
+
+  target 'PlanetsTests' do
+     inherit! :search_paths
+  end
+
 end

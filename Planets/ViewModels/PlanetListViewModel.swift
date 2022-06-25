@@ -53,18 +53,18 @@ final class PlanetListViewModel: ObservableObject {
      ```
     */
     
-    func fetchPlanets(till paginationIndex: Int) {
+    func fetchPlanets(till paginationIndex: Int, completion: @escaping (Result<[Planet], Error>) -> Void = {_ in }) {
         self.repository.fetchPlanets(till: paginationIndex).sink { result in
             switch result {
             case .failure(let error):
                 print(error.localizedDescription)
+                completion(.failure(error))
             default:
                 print("completed")
             }
         } receiveValue: { planets in
-            DispatchQueue.main.async {
-                self.planets += planets.results
-            }
+            self.planets += planets.results
+            completion(.success(self.planets))
         }.store(in: &cancellables)
     }
 }

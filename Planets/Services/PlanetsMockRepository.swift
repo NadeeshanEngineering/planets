@@ -38,8 +38,8 @@ final class PlanetsMockRepository: PlanetsRepositoryProtocal {
     */
     
     final func fetchPlanets(till paginationIndex: Int) -> AnyPublisher<Planets, Error> {
-        return Just(Planets(count: 1, next: nil, previous: nil, results: [Planet(name: "Polis Massa", orbital_period: "590", climate: "artificial temperate ", gravity: "0.56 standard")]))
+        return paginationIndex > 0 ? Just(Planets(count: 1, next: nil, previous: nil, results: [Planet(name: "Polis Massa", orbital_period: "590", climate: "artificial temperate ", gravity: "0.56 standard")]))
             .setFailureType(to: Error.self)
-            .eraseToAnyPublisher()
+            .eraseToAnyPublisher() : Fail(error: NSError(domain: "", code: 404, userInfo: [NSLocalizedDescriptionKey : "Invalid API response"])).eraseToAnyPublisher()
     }
 }
