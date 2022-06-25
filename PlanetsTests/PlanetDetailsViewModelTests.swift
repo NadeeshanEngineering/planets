@@ -18,7 +18,11 @@ class PlanetDetailsViewModelTests: XCTestCase {
         sut = PlanetDetailsViewModel(id: 5, planet: Planet(name: "Polis Massa", orbital_period: "590", climate: "artificial temperate ", gravity: "0.56 standard"))
     }
     
-    func testSetupImageIconURL_onRequestWithSuccess_isCalled() {
+    override func tearDownWithError() throws {
+        try super.tearDownWithError()
+    }
+    
+    func test_PlanetDetailsView_setupImageIconURL_isCalledWithSuccess() {
         // Given
         // "index" variable inside the PlanetDetailsViewModel object is equal to '5'
         
@@ -29,7 +33,7 @@ class PlanetDetailsViewModelTests: XCTestCase {
         XCTAssertEqual(sut.image_url, Constants.IMAGE_URL_BASE + "5" + Constants.IMAGE_SIZE)
     }
     
-    func testSetupImageIconURL_onRequestWithFailed_isCalled() {
+    func test_PlanetDetailsView_setupImageIconURL_isCalledWithFailed() {
         // Given
         // "index" variable inside the PlanetDetailsViewModel object is equal to '5'
         
@@ -40,7 +44,7 @@ class PlanetDetailsViewModelTests: XCTestCase {
         XCTAssertNotEqual(sut.image_url, Constants.IMAGE_URL_BASE + "6" + Constants.IMAGE_SIZE)
     }
     
-    func testPlanetObject_onClassInitWithSuccess_isCalled() {
+    func test_PlanetDetailsView_planetVariable_onInitWithSuccess() {
         
         // Given
         // "planet" variable inside the PlanetDetailsViewModel object is not nil
@@ -52,7 +56,7 @@ class PlanetDetailsViewModelTests: XCTestCase {
         XCTAssertNotNil(sut.planet)
     }
     
-    func testPlanetObject_onClassInitWithFailed_isCalled() {
+    func test_PlanetDetailsView_planetVariable_onInitWithFailed() {
         
         // Given
         sut = PlanetDetailsViewModel(id: 3, planet: nil)

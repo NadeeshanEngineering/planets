@@ -63,8 +63,10 @@ final class PlanetListViewModel: ObservableObject {
                 print("completed")
             }
         } receiveValue: { planets in
-            self.planets += planets.results
-            completion(.success(self.planets))
+            DispatchQueue.main.async {
+                self.planets += planets.results
+                completion(.success(self.planets))
+            }
         }.store(in: &cancellables)
     }
 }

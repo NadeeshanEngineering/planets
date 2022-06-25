@@ -10,6 +10,7 @@
 		23796E838CDCE80A8FD8EA99 /* Pods_PlanetsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF012E061B9FD9EE641703E /* Pods_PlanetsTests.framework */; };
 		302A0E232840584C00D89FDB /* KingfisherImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302A0E222840584C00D89FDB /* KingfisherImageView.swift */; };
 		302A0E26284061D000D89FDB /* DetailTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302A0E25284061D000D89FDB /* DetailTextView.swift */; };
+		303A0970286781490085C7A2 /* PlanetListViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A096F286781490085C7A2 /* PlanetListViewUITests.swift */; };
 		307114AD2840035E00E14D10 /* PlanetsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307114AC2840035E00E14D10 /* PlanetsApp.swift */; };
 		307114AF2840035E00E14D10 /* PlanetListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307114AE2840035E00E14D10 /* PlanetListView.swift */; };
 		307114B12840036200E14D10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 307114B02840036200E14D10 /* Assets.xcassets */; };
@@ -31,6 +32,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		303A0973286781490085C7A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 307114A12840035E00E14D10 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 307114A82840035E00E14D10;
+			remoteInfo = Planets;
+		};
 		30A4D65D2867104700F3B1F8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 307114A12840035E00E14D10 /* Project object */;
@@ -45,6 +53,8 @@
 		302A0E222840584C00D89FDB /* KingfisherImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherImageView.swift; sourceTree = "<group>"; };
 		302A0E25284061D000D89FDB /* DetailTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextView.swift; sourceTree = "<group>"; };
 		3034237A286719D1003F3EA8 /* libKingfisher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libKingfisher.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		303A096D286781490085C7A2 /* PlanetsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanetsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		303A096F286781490085C7A2 /* PlanetListViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListViewUITests.swift; sourceTree = "<group>"; };
 		304FCB18CD7BC23CB6F3D122 /* Pods-Planets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planets.debug.xcconfig"; path = "Target Support Files/Pods-Planets/Pods-Planets.debug.xcconfig"; sourceTree = "<group>"; };
 		307114A92840035E00E14D10 /* Planets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		307114AC2840035E00E14D10 /* PlanetsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsApp.swift; sourceTree = "<group>"; };
@@ -72,6 +82,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		303A096A286781490085C7A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		307114A62840035E00E14D10 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -101,11 +118,20 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		303A096E286781490085C7A2 /* PlanetsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				303A096F286781490085C7A2 /* PlanetListViewUITests.swift */,
+			);
+			path = PlanetsUITests;
+			sourceTree = "<group>";
+		};
 		307114A02840035E00E14D10 = {
 			isa = PBXGroup;
 			children = (
 				307114AB2840035E00E14D10 /* Planets */,
 				30A4D65A2867104700F3B1F8 /* PlanetsTests */,
+				303A096E286781490085C7A2 /* PlanetsUITests */,
 				307114AA2840035E00E14D10 /* Products */,
 				E5723D615D5D2C38C55B962B /* Pods */,
 				612BB0A5051CA0FC55ECAB75 /* Frameworks */,
@@ -117,6 +143,7 @@
 			children = (
 				307114A92840035E00E14D10 /* Planets.app */,
 				30A4D6592867104700F3B1F8 /* PlanetsTests.xctest */,
+				303A096D286781490085C7A2 /* PlanetsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -233,6 +260,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		303A096C286781490085C7A2 /* PlanetsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 303A0975286781490085C7A2 /* Build configuration list for PBXNativeTarget "PlanetsUITests" */;
+			buildPhases = (
+				303A0969286781490085C7A2 /* Sources */,
+				303A096A286781490085C7A2 /* Frameworks */,
+				303A096B286781490085C7A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				303A0974286781490085C7A2 /* PBXTargetDependency */,
+			);
+			name = PlanetsUITests;
+			productName = PlanetsUITests;
+			productReference = 303A096D286781490085C7A2 /* PlanetsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		307114A82840035E00E14D10 /* Planets */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 307114B72840036200E14D10 /* Build configuration list for PBXNativeTarget "Planets" */;
@@ -281,6 +326,10 @@
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					303A096C286781490085C7A2 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 307114A82840035E00E14D10;
+					};
 					307114A82840035E00E14D10 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -305,11 +354,19 @@
 			targets = (
 				307114A82840035E00E14D10 /* Planets */,
 				30A4D6582867104700F3B1F8 /* PlanetsTests */,
+				303A096C286781490085C7A2 /* PlanetsUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		303A096B286781490085C7A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		307114A72840035E00E14D10 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -393,6 +450,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		303A0969286781490085C7A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				303A0970286781490085C7A2 /* PlanetListViewUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		307114A52840035E00E14D10 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -426,6 +491,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		303A0974286781490085C7A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 307114A82840035E00E14D10 /* Planets */;
+			targetProxy = 303A0973286781490085C7A2 /* PBXContainerItemProxy */;
+		};
 		30A4D65E2867104700F3B1F8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 307114A82840035E00E14D10 /* Planets */;
@@ -434,6 +504,38 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		303A0976286781490085C7A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.planets.example.PlanetsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Planets;
+			};
+			name = Debug;
+		};
+		303A0977286781490085C7A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.planets.example.PlanetsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Planets;
+			};
+			name = Release;
+		};
 		307114B52840036200E14D10 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -655,6 +757,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		303A0975286781490085C7A2 /* Build configuration list for PBXNativeTarget "PlanetsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				303A0976286781490085C7A2 /* Debug */,
+				303A0977286781490085C7A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		307114A42840035E00E14D10 /* Build configuration list for PBXProject "Planets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -19,7 +19,11 @@ class PlanetListViewModelTests: XCTestCase {
         sut = PlanetListViewModel(repository: PlanetsMockRepository())
     }
     
-    func testFetchPlanets_onAppearWithSuccessAPI_isCalled() {
+    override func tearDownWithError() throws {
+        try super.tearDownWithError()
+    }
+    
+    func test_PlanetListView_onAppearWithSuccessAPI_isCalled() {
         let expectation = self.expectation(description: "Waiting for the fetchPlanets function to complete.")
         
         // Given
@@ -37,7 +41,7 @@ class PlanetListViewModelTests: XCTestCase {
         }
     }
     
-    func testFetchPlanets_onAppearWithFailedAPI_isCalled() {
+    func test_PlanetListView_onAppearWithFailedAPI_isCalled() {
         let expectation = self.expectation(description: "Waiting for the fetchPlanets function to complete.")
         
         // Given
